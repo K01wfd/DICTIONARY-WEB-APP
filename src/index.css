@@ -79,7 +79,7 @@ html {
   --ff-inter: 'inter', sans-serif;
   --ff-lora: 'lora', serif;
   --ff-inconsolata: 'inconsolata', monospace;
-  --ff-primary: var(--ff-inconsolata);
+
   --fw-400: 400;
   --fw-700: 700;
 }
@@ -96,7 +96,15 @@ html {
   }
 }
 body {
-  font-family: var(--ff-primary);
-  font-weight: var(--fw-400);
+  font-weight: var(--fw-700);
   font-size: var(--fs-main-18);
+}
+.sans {
+  font-family: var(--ff-inter);
+}
+.serif {
+  font-family: var(--ff-lora);
+}
+.mono {
+  font-family: var(--ff-inconsolata);
 }
