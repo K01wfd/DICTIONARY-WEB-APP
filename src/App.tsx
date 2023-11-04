@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Header from './components/header/Header';
 
 interface Dictionary {
   font: string;
@@ -9,7 +10,11 @@ function App() {
     font: 'mono',
   } as Dictionary);
 
-  return <div className={dictionary.font}>heloo</div>;
+  return (
+    <div className={dictionary.font}>
+      <Header />
+    </div>
+  );
 }
 
 export default App;
