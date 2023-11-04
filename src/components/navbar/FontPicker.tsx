@@ -11,7 +11,7 @@ function FontPicker() {
       >
         Pick Font
       </MenuButton>
-      <MenuList>
+      <MenuList bg={'gray.100'} padding={'24px'}>
         <MenuItem>Sans Serif</MenuItem>
         <MenuItem>Serif</MenuItem>
         <MenuItem>Mono</MenuItem>
