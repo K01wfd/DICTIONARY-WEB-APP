@@ -1,5 +1,7 @@
+import Header from './components/navbar/Header';
+
 function App() {
-  return <div>hello</div>;
+  return <Header />;
 }
 
 export default App;
