@@ -1,3 +1,48 @@
+/* SansSerif font */
+@font-face {
+  font-family: 'inter';
+  src: url('./assets/fonts/sansSerif/Inter-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'inter';
+  src: url('./assets/fonts/sansSerif/Inter-Bold.ttf') format('ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+/* Serif Font */
+@font-face {
+  font-family: 'lora';
+  src: url('./assets/fonts/serif/Lora-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'lora';
+  src: url('./assets/fonts/serif/Lora-Bold.ttf') format('ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'lora';
+  src: url('./assets/fonts/serif/Lora-BoldItalic.ttf') format('ttf');
+  font-weight: bold;
+  font-style: italic;
+}
+/* MONOSPACE FONT */
+@font-face {
+  font-family: 'inconsolata';
+  src: url('./assets/fonts/mono/Inconsolata-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'inconsolata';
+  src: url('./assets/fonts/mono/Inconsolata-Bold.ttf') format('ttf');
+  font-weight: bold;
+  font-style: normal;
+}
 :root {
   --clr-100: '#FFF';
   --clr-200: '#F4F4F4';
@@ -14,4 +59,16 @@
   /* TYPOGRAPHY */
   --fs-header-18: ;
   --fs-header-20: ;
+
+  --ff-inter: 'inter', sans-serif;
+  --ff-lora: 'lora', serif;
+  --ff-inconsolata: 'inconsolata', monospace;
+  --ff-primary: var(--ff-inconsolata);
+  --fw-400: 400;
+  --fw-700: 700;
+}
+body {
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-400);
+  font-style: italic;
 }
