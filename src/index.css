@@ -1,0 +1,17 @@
+:root {
+  --clr-100: '#FFF';
+  --clr-200: '#F4F4F4';
+  --clr-300: '#E9E9E9';
+  --clr-400: '#757575';
+  --clr-500: '#3A3A3A';
+  --clr-600: '#2D2D2D';
+  --clr-700: '#1F1F1F';
+  --clr-800: '#050505';
+
+  --clr-accent: '#A445ED';
+  --clr-error: '#FF5252';
+
+  /* TYPOGRAPHY */
+  --fs-header-18: ;
+  --fs-header-20: ;
+}
