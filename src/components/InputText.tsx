@@ -1,15 +1,29 @@
+import { FormEvent, useRef } from 'react';
 import search from '../assets/images/icon-search.svg';
 import styles from '../styles/input.module.css';
-function InputText() {
+
+interface Props {
+  onSearch: (searchWord: string) => void;
+}
+function InputText({ onSearch }: Props) {
+  const ref = useRef<HTMLInputElement>(null);
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (ref.current?.value) {
+      let word = ref.current.value.trim().replace(/\s/g, '');
+      onSearch(word);
+    }
+  };
   return (
     <div className='container'>
-      <form action=''>
+      <form action='' onSubmit={handleSubmit}>
         <div className={styles.inputGroup}>
           <input
             type='text'
             id='word'
             name='word'
             placeholder='search for any word...'
+            ref={ref}
           />
           <button>
             <img src={search} alt='' />
