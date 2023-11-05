@@ -3,10 +3,12 @@ import Nav from './Nav';
 import styles from '../../styles/header/header.module.css';
 function Header() {
   return (
-    <header className={styles.header}>
+    <header>
       <div className={`container`}>
-        <img src={logo} className={styles.logo} alt='logo' />
-        <Nav />
+        <div className={styles.headerWrapper}>
+          <img src={logo} className={styles.logo} alt='logo' />
+          <Nav />
+        </div>
       </div>
     </header>
   );

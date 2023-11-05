@@ -1,19 +1,15 @@
-.header {
+.headerWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-block: 6.3rem;
 }
 
 .logo {
+  max-width: 32px;
 }
 
 .nav {
-}
-.fontsMenu {
-}
-
-.menuItem {
-}
-
-.toggleBox {
-}
-
-.themToggler {
+  display: flex;
+  column-gap: 5.3rem;
+  align-items: center;
 }

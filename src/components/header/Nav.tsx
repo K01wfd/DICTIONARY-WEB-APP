@@ -1,20 +1,11 @@
 import styles from '../../styles/header/header.module.css';
 import moon from '../../assets/images/icon-moon.svg';
+import FontsMenu from './FontsMenu';
+
 function Nav() {
-  const fontsMap = [
-    { label: 'Sans Serif', value: 'sans' },
-    { label: 'Serif', value: 'serif' },
-    { label: 'Mono', value: 'mono' },
-  ];
   return (
     <div className={styles.nav}>
-      <select className={styles.fontsMenu} name='fonts' id='fonts'>
-        {fontsMap.map((font) => (
-          <option className={styles.menuItem} value={font.value}>
-            {font.label}
-          </option>
-        ))}
-      </select>
+      <FontsMenu />
       <div className={styles.toggleBox}>
         <input
           type='checkbox'

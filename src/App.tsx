@@ -7,7 +7,7 @@ interface Dictionary {
 
 function App() {
   const [dictionary, setDictionary] = useState<Dictionary>({
-    font: 'mono',
+    font: 'sans',
   } as Dictionary);
 
   return (
