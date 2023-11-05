@@ -7,9 +7,10 @@ import FontsMenu from './FontsMenu';
 
 interface Props {
   onThemeChange: () => void;
+  onFontSelect: (font: string) => void;
   theme: string;
 }
-function Header({ onThemeChange, theme }: Props) {
+function Header({ onThemeChange, theme, onFontSelect }: Props) {
   const root = document.documentElement;
   if (theme === 'dark') {
     root.style.setProperty('--clr-gray-100-sec', '#1f1f1f');
@@ -33,7 +34,7 @@ function Header({ onThemeChange, theme }: Props) {
         <div className={styles.headerWrapper}>
           <img src={logo} className={styles.logo} alt='logo' />
           <div className={navStyles.nav}>
-            <FontsMenu />
+            <FontsMenu onFontSelect={onFontSelect} />
             <div className='verticalDevider'></div>
             <div className={switchStyles.toggleBox}>
               <input

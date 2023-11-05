@@ -16,6 +16,7 @@ function App() {
     <div className={dictionary.font}>
       <Header
         onThemeChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+        onFontSelect={(font) => setDictionary({ ...dictionary, font })}
         theme={theme}
       />
       <InputText />

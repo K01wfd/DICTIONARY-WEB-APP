@@ -2,7 +2,10 @@ import styles from '../../styles/header/menu.module.css';
 import arrowDown from '../../assets/images/icon-arrow-down.svg';
 import { useState } from 'react';
 
-function FontsMenu() {
+interface Props {
+  onFontSelect: (font: string) => void;
+}
+function FontsMenu({ onFontSelect }: Props) {
   const [menuActive, setMenuActive] = useState(false);
 
   const fontsMap = [
@@ -45,7 +48,7 @@ function FontsMenu() {
               type='radio'
               name='fontOption'
               id={font.value}
-              value={font.value}
+              onChange={() => onFontSelect(font.value)}
             />
             <label htmlFor={font.value} className={font.fontfamily}>
               {font.label}
