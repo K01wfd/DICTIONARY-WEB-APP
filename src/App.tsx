@@ -1,22 +1,19 @@
 import { useState } from 'react';
 import Header from './components/header/Header';
 import InputText from './components/InputText';
-
-interface Dictionary {
-  font: string;
-}
+import { useDictionary } from './hooks/useDictionary';
 
 function App() {
-  const [dictionary, setDictionary] = useState<Dictionary>({
-    font: 'sans',
-  } as Dictionary);
+  const [font, setFont] = useState<string>('sans');
   const [theme, setTheme] = useState('light');
+  const { dictionary, error } = useDictionary('keyboard');
 
+  console.log(dictionary?.map((item) => item.sourceUrls));
   return (
-    <div className={dictionary.font}>
+    <div className={font}>
       <Header
         onThemeChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-        onFontSelect={(font) => setDictionary({ ...dictionary, font })}
+        onFontSelect={(font) => setFont(font)}
         theme={theme}
       />
       <InputText />
