@@ -9,6 +9,7 @@ function FontsMenu() {
     { label: 'Serif', value: 'serif', fontfamily: 'serif' },
     { label: 'Mono', value: 'mono', fontfamily: 'mono' },
   ];
+
   return (
     <div className={styles.menu}>
       <button
@@ -33,7 +34,12 @@ function FontsMenu() {
         id='select-dropdown'
       >
         {fontsMap.map((font) => (
-          <li key={font.value} role='option' className={styles.menuItem}>
+          <li
+            key={font.value}
+            role='option'
+            className={styles.menuItem}
+            onClick={() => setMenuActive(false)}
+          >
             <input
               type='radio'
               name='fontOption'

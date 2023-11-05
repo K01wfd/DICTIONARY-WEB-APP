@@ -7,8 +7,8 @@
 }
 :root {
   --clr-gray-100: #fff;
-  --clr-gray-300: #e9e9e9;
   --clr-gray-200: #f4f4f4;
+  --clr-gray-300: #e9e9e9;
   --clr-gray-400: #757575;
   --clr-gray-500: #3a3a3a;
   --clr-gray-600: #2d2d2d;
@@ -20,7 +20,7 @@
 
   /* TYPOGRAPHY */
   --fs-header-18: 1.8rem;
-  --fs-header-20: 2rem;
+  --fs-input-20: 2rem;
   --fs-word-64: 6.4rem;
   --fs-word-24: 2.4rem;
   --fs-main-24: 2.4rem;
@@ -39,7 +39,7 @@
 @media only screen and (max-width: 30em) {
   :root {
     --fs-header-18: 1.4rem;
-    --fs-header-20: 1.6rem;
+    --fs-input-20: 1.6rem;
     --fs-word-64: 3.2rem;
     --fs-word-24: 1.8rem;
     --fs-main-24: 1.8rem;

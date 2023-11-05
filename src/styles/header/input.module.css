@@ -1,0 +1,32 @@
+.inputGroup {
+  position: relative;
+  font-size: var(--fs-input-20);
+}
+.inputGroup input[type='text'] {
+  outline: 0;
+  border: 0;
+  background-color: var(--clr-gray-300);
+  padding-block: 1.9rem;
+  padding-inline: 2.4rem;
+  width: 100%;
+  border-radius: 1.6rem;
+  color: var(--clr-gray-600);
+}
+.inputGroup input[type='text']::placeholder {
+  color: var(--clr-gray-600);
+  opacity: 0.25;
+}
+.inputGroup input[type='text']:hover,
+.inputGroup input[type='text']:focus {
+  outline: 1px solid var(--clr-accent);
+}
+.inputGroup button {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  background: transparent;
+}
