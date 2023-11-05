@@ -19,8 +19,9 @@
 }
 .menuList {
   position: absolute;
-  background-color: #fff;
-  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
+  background-color: var(--clr-gray-100-sec);
+  color: var(--clr-gray-600);
+  box-shadow: var(--menu-box-shadow);
   border-radius: 1.6rem;
   padding: 2.4rem;
   padding-right: 6.4rem;

@@ -7,6 +7,7 @@
 }
 :root {
   --clr-gray-100: #fff;
+  --clr-gray-100-sec: #fff;
   --clr-gray-200: #f4f4f4;
   --clr-gray-300: #e9e9e9;
   --clr-gray-400: #757575;
@@ -15,8 +16,10 @@
   --clr-gray-700: #1f1f1f;
   --clr-gray-800: #050505;
 
-  --clr-accent: #a445ed;
+  --clr-devider: #e9e9e9;
+  --clr-accent: rgb(164, 69, 237);
   --clr-error: #ff5252;
+  --menu-box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
 
   /* TYPOGRAPHY */
   --fs-header-18: 1.8rem;
@@ -54,6 +57,17 @@ html {
 body {
   font-weight: var(--fw-700);
   font-size: var(--fs-main-18);
+  background: var(--clr-gray-100);
+}
+.dark {
+  --clr-gray-800: #fff;
+  --clr-gray-700: #f4f4f4;
+  --clr-gray-600: #e9e9e9;
+  --clr-gray-500: #757575;
+  --clr-gray-400: #3a3a3a;
+  --clr-gray-300: #2d2d2d;
+  --clr-gray-200: #1f1f1f;
+  --clr-gray-100: #050505;
 }
 .sans {
   font-family: var(--ff-inter);
@@ -97,8 +111,8 @@ h1 {
 }
 .verticalDevider {
   width: 2px;
-  height: 100%;
-  background-color: var(--clr-gray-300);
+  height: 32px;
+  background-color: var(--clr-devider);
 }
 @media only screen and (max-width: 50em) {
   .container {

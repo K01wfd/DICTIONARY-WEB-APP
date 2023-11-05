@@ -1,6 +1,7 @@
 import styles from '../../styles/header/menu.module.css';
 import arrowDown from '../../assets/images/icon-arrow-down.svg';
 import { useState } from 'react';
+
 function FontsMenu() {
   const [menuActive, setMenuActive] = useState(false);
 
@@ -29,7 +30,7 @@ function FontsMenu() {
         />
       </button>
       <ul
-        className={`${menuActive ? styles.menuList : 'visuallyHidden'}`}
+        className={menuActive ? styles.menuList : 'visuallyHidden'}
         role='listbox'
         id='select-dropdown'
       >

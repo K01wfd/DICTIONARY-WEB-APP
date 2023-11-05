@@ -1,5 +1,5 @@
-import search from '../../assets/images/icon-search.svg';
-import styles from '../../styles/header/input.module.css';
+import search from '../assets/images/icon-search.svg';
+import styles from '../styles/input.module.css';
 function InputText() {
   return (
     <div className='container'>
