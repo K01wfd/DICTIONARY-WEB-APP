@@ -10,6 +10,11 @@
 
 .nav {
   display: flex;
-  column-gap: 5.3rem;
+  column-gap: 4rem;
   align-items: center;
+}
+@media only screen and (max-width: 30em) {
+  .nav {
+    column-gap: 2rem;
+  }
 }

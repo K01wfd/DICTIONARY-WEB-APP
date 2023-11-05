@@ -1,8 +1,8 @@
 .menu {
   position: relative;
   font-size: var(--fs-header-18);
-
   font-weight: 700;
+  margin-left: auto;
 }
 .menuButton {
   border: 0;
@@ -11,6 +11,7 @@
   gap: 1rem;
   align-items: center;
   cursor: pointer;
+  color: var(--clr-gray-600);
 }
 .menuSelectedValue {
 }
@@ -29,9 +30,10 @@
   gap: 1.6rem;
   top: calc(0% + 4rem);
   right: 0;
-}
-
-.menuItem {
+  width: 183px;
+  max-width: 183px;
+  transition: all 0.2s ease-in;
+  opacity: 1;
 }
 
 .menuItem input[type='radio'] {
