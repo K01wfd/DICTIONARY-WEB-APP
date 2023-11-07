@@ -29,10 +29,7 @@ export const processPhonetics = (dictionary: Dictionary[]) => {
   return phonetics;
 };
 
-export const processNounMeaning = (
-  dictionary: Dictionary[],
-  filter: string
-) => {
+export const processMeanings = (dictionary: Dictionary[], filter: string) => {
   let meanings: Meaning[] = [];
   dictionary.forEach((data) => {
     data.meanings.forEach((meaning) => {

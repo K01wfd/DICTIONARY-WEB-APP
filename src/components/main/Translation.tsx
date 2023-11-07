@@ -3,7 +3,7 @@ import { Meaning, Phonetics } from '../../interfaces/dictionary';
 import { useDictionary } from '../../hooks/useDictionary';
 import {
   getWord,
-  processNounMeaning,
+  processMeanings,
   processPhonetics,
 } from '../../services/processDictinary';
 import play from '../../assets/images/icon-play.svg';
@@ -21,13 +21,13 @@ interface Props {
   word: string;
 }
 function Word({ word }: Props) {
-  let wordShape = {} as WordInterface;
+  let wordShape = {} as WordInterface; // object shape to display
   let noDefinationTrigger = false;
   const { dictionary, isLoading, error } = useDictionary(word);
   wordShape.word = getWord(dictionary);
   wordShape.phonetic = processPhonetics(dictionary);
-  wordShape.nounMeanings = processNounMeaning(dictionary, 'noun');
-  wordShape.verbMeanings = processNounMeaning(dictionary, 'verb');
+  wordShape.nounMeanings = processMeanings(dictionary, 'noun');
+  wordShape.verbMeanings = processMeanings(dictionary, 'verb');
   console.log(dictionary);
 
   if (word !== wordShape.word) {
@@ -36,11 +36,12 @@ function Word({ word }: Props) {
   if (wordShape.nounMeanings.length === 0) {
     noDefinationTrigger = true;
   }
-  console.log(error);
+
+  if (noDefinationTrigger) return <NoDefinition />;
   if (error) return <Error />;
   return (
     <section className='container'>
-      {!isLoading && !noDefinationTrigger ? (
+      {!isLoading && (
         <div className={styles.translation}>
           {/* WORD PART */}
           <div className={styles.phonetics}>
@@ -54,14 +55,12 @@ function Word({ word }: Props) {
           </div>
           {/* NOUN PART */}
           {wordShape.nounMeanings.length > 0 && (
-            <Details nounPart={wordShape.nounMeanings} title='noun' />
+            <Details details={wordShape.nounMeanings} title='noun' />
           )}
           {wordShape.verbMeanings.length > 0 && (
-            <Details nounPart={wordShape.verbMeanings} title='verb' />
+            <Details details={wordShape.verbMeanings} title='verb' />
           )}
         </div>
-      ) : (
-        <NoDefinition />
       )}
     </section>
   );

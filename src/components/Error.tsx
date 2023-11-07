@@ -4,7 +4,7 @@ function Error() {
     <div className='container'>
       <div className={styles.error}>
         <h2>Oops! Error fetching data</h2>
-        <p>You can try again later.</p>
+        <p>Try another word or you can try again later.</p>
       </div>
     </div>
   );

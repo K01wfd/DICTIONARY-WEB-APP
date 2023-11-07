@@ -2,10 +2,10 @@ import styles from '../../styles/main/nounPart.module.css';
 import { Meaning } from '../../interfaces/dictionary';
 
 interface Props {
-  nounPart: Meaning[];
+  details: Meaning[];
   title: string;
 }
-function Details({ nounPart, title }: Props) {
+function Details({ details, title }: Props) {
   return (
     <div className={styles.noun}>
       <div className={styles.nounTitle}>
@@ -15,7 +15,7 @@ function Details({ nounPart, title }: Props) {
 
       <p className={styles.meaning}>Meaning</p>
       <ul className={styles.nounDefList}>
-        {nounPart.map(
+        {details.map(
           (data, i) =>
             i < 1 &&
             data.definitions.map(
@@ -25,7 +25,7 @@ function Details({ nounPart, title }: Props) {
         )}
       </ul>
       <div className={styles.synon}>
-        {nounPart.map(
+        {details.map(
           (data, i) =>
             i < 1 && (
               <div key={'syno' + i}>
