@@ -1,22 +1,12 @@
 import { useState } from 'react';
 import Header from './components/header/Header';
 import InputText from './components/InputText';
-import { useWord } from './hooks/useWoed';
+import Translation from './components/main/Translation';
 
-export interface DictionaryQuery {
-  word: string;
-}
 function App() {
-  const [font, setFont] = useState<string>('sans');
+  const [font, setFont] = useState('sans');
   const [theme, setTheme] = useState('light');
-  const [dictionaryQuery, setDictionaryQuery] = useState<DictionaryQuery>(
-    {} as DictionaryQuery
-  );
-
-  const { dictionary, error } = useWord(dictionaryQuery);
-  console.log(
-    dictionary?.map((elem) => elem.meanings.map((item) => item.partOfSpeech))
-  );
+  const [word, setWord] = useState<string>('');
   return (
     <div className={font}>
       <Header
@@ -24,9 +14,10 @@ function App() {
         onFontSelect={(font) => setFont(font)}
         theme={theme}
       />
-      <InputText
-        onSearch={(word) => setDictionaryQuery({ ...dictionaryQuery, word })}
-      />
+      <main>
+        <InputText onSearch={(word) => setWord(word)} />
+        {word && <Translation word={word} />}
+      </main>
     </div>
   );
 }

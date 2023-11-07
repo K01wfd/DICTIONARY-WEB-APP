@@ -1,9 +1,9 @@
-interface Meaning {
+export interface Meaning {
   partOfSpeech: string;
   definitions: { definition: string }[];
-  synonyms?: string[];
+  synonyms: string[];
 }
-interface Phonetics {
+export interface Phonetics {
   text: string;
   audio: string;
 }

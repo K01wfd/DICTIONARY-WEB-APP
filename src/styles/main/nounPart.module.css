@@ -1,0 +1,46 @@
+.noun {
+  display: grid;
+  margin-top: 3.9rem;
+  font-weight: var(--fw-400);
+}
+.nounTitle {
+  display: flex;
+  align-items: center;
+  column-gap: 2.3rem;
+  margin-bottom: 4.2rem;
+}
+.nounTitle h2 {
+  font-size: var(--fs-main-24);
+  font-weight: var(--fw-700);
+}
+.meaning {
+  color: var(--clr-gray-400);
+  font-size: var(--fs-main-20);
+}
+.nounDefList {
+  margin-top: 2.4rem;
+  margin-left: 4.7rem;
+  font-size: var(--fs-main-18);
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.3rem;
+  margin-bottom: 6.3rem;
+}
+.synon {
+  display: flex;
+  align-items: center;
+}
+.synon p {
+  margin-right: 2.2rem;
+  color: var(--clr-gray-400);
+  display: inline-block;
+}
+.synon span {
+  color: var(--clr-accent);
+  margin-left: 1rem;
+}
+span.notFoundSyno {
+  color: var(--clr-gray-400);
+  opacity: 0.5;
+  font-size: 1.4rem;
+}

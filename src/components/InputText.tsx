@@ -12,6 +12,7 @@ function InputText({ onSearch }: Props) {
     if (ref.current?.value) {
       let word = ref.current.value.trim().replace(/\s/g, '');
       onSearch(word);
+      ref.current.value = '';
     }
   };
   return (
