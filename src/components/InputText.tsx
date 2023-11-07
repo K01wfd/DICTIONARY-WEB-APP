@@ -10,7 +10,7 @@ function InputText({ onSearch }: Props) {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (ref.current?.value) {
-      let word = ref.current.value.trim().replace(/\s/g, '');
+      let word = ref.current.value.trim().replace(/\s/g, '').toLowerCase();
       onSearch(word);
       ref.current.value = '';
     }

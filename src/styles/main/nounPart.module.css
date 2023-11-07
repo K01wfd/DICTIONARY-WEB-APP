@@ -26,6 +26,9 @@
   row-gap: 1.3rem;
   margin-bottom: 6.3rem;
 }
+.nounDefList li::marker {
+  color: var(--clr-accent);
+}
 .synon {
   display: flex;
   align-items: center;

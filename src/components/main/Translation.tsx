@@ -9,6 +9,7 @@ import {
 import play from '../../assets/images/icon-play.svg';
 import Details from './Details';
 import NoDefinition from '../NoDefinition';
+import Error from '../Error';
 interface WordInterface {
   word: string;
   phonetic: Phonetics;
@@ -22,7 +23,7 @@ interface Props {
 function Word({ word }: Props) {
   let wordShape = {} as WordInterface;
   let noDefinationTrigger = false;
-  const { dictionary, isLoading } = useDictionary(word);
+  const { dictionary, isLoading, error } = useDictionary(word);
   wordShape.word = getWord(dictionary);
   wordShape.phonetic = processPhonetics(dictionary);
   wordShape.nounMeanings = processNounMeaning(dictionary, 'noun');
@@ -35,6 +36,8 @@ function Word({ word }: Props) {
   if (wordShape.nounMeanings.length === 0) {
     noDefinationTrigger = true;
   }
+  console.log(error);
+  if (error) return <Error />;
   return (
     <section className='container'>
       {!isLoading && !noDefinationTrigger ? (

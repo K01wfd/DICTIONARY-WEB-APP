@@ -32,7 +32,7 @@ function Details({ nounPart, title }: Props) {
                 <p>Synonyms</p>
                 {data.synonyms.length > 0 ? (
                   data.synonyms.map(
-                    (syno, i) => i < 4 && <span key={syno}>{syno}</span>
+                    (syno, i) => i < 3 && <span key={syno}>{syno}</span>
                   )
                 ) : (
                   <span className={styles.notFoundSyno}>not found</span>

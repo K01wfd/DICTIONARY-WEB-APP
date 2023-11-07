@@ -21,6 +21,7 @@ export const useDictionary = (word: string) => {
         .then((res) => {
           setDictionary(res.data);
           setIsLoading(false);
+          setError('');
         })
         .catch((err) => {
           if (err instanceof CanceledError) {

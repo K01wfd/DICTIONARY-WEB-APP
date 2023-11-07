@@ -1,0 +1,14 @@
+.error {
+  text-align: center;
+  padding-block: 4rem;
+}
+.error h2 {
+  color: var(--clr-error);
+  font-size: var(--fs-main-24);
+}
+.error p {
+  color: var(--clr-gray-500);
+  opacity: 0.5;
+  font-size: 1.2rem;
+  margin-top: 1.4rem;
+}
