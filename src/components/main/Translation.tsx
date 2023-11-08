@@ -11,15 +11,17 @@ function Word({ translation }: Props) {
     <section>
       <div className={styles.translation}>
         {/* WORD PART */}
-        <div className={styles.phonetics}>
-          <div>
-            <h1>{translation.word}</h1>
-            <p>{translation.phonetics.text}</p>
+        {translation.word && (
+          <div className={styles.phonetics}>
+            <div>
+              <h1>{translation.word}</h1>
+              <p>{translation.phonetics.text}</p>
+            </div>
+            <button>
+              <img src={play} alt='play button' />
+            </button>
           </div>
-          <button>
-            <img src={play} alt='play button' />
-          </button>
-        </div>
+        )}
         {/* NOUN PART */}
         {translation.nounMeanings.length > 0 && (
           <Details details={translation.nounMeanings} title='noun' />

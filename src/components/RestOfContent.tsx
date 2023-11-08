@@ -2,41 +2,25 @@ import { TranslationShape } from '../interfaces/dictionary';
 import Loader from './Loader';
 import NoDefinition from './NoDefinition';
 import Footer from './footer/Footer';
-import InputText from './main/InputText';
 import Translation from './main/Translation';
 
 interface Props {
-  onSearch: (searchWord: string) => void;
   translation: TranslationShape;
   isLoading: boolean;
   error: string;
   word: string;
 }
-function RestOfContent({
-  word,
-  onSearch,
-  translation,
-  isLoading,
-  error,
-}: Props) {
+function RestOfContent({ word, translation, isLoading, error }: Props) {
+  if (error) return <NoDefinition />;
+  if (isLoading) return <Loader />;
   return (
     <>
-      {!error ? (
-        <main>
-          <InputText onSearch={onSearch} />
-          {word && !isLoading ? (
-            <Translation translation={translation} />
-          ) : (
-            <Loader />
-          )}
-        </main>
-      ) : (
-        <NoDefinition />
+      <main>{word && <Translation translation={translation} />}</main>
+      {word && (
+        <footer>
+          <Footer url={translation.sourceUrl} />
+        </footer>
       )}
-
-      {!isLoading && !error ? (
-        <footer>{word && <Footer url={translation.sourceUrl} />}</footer>
-      ) : null}
     </>
   );
 }

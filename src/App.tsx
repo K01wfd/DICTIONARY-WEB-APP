@@ -17,16 +17,15 @@ function App() {
         onThemeChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
         onFontSelect={(font) => setFont(font)}
         theme={theme}
+        onSearch={(searchord) => setWord(searchord)}
       />
-      {
-        <RestOfContent
-          word={word}
-          onSearch={(searchord) => setWord(searchord)}
-          translation={translation}
-          isLoading={isLoading}
-          error={error}
-        />
-      }
+
+      <RestOfContent
+        word={word}
+        translation={translation}
+        isLoading={isLoading}
+        error={error}
+      />
     </div>
   );
 }

@@ -4,13 +4,15 @@ import switchStyles from '../../styles/header/switch.module.css';
 import navStyles from '../../styles/header/header.module.css';
 import moon from '../../assets/images/icon-moon.svg';
 import FontsMenu from './FontsMenu';
+import InputText from '../main/InputText';
 
 interface Props {
   onThemeChange: () => void;
   onFontSelect: (font: string) => void;
   theme: string;
+  onSearch: (searchWord: string) => void;
 }
-function Header({ onThemeChange, theme, onFontSelect }: Props) {
+function Header({ onThemeChange, theme, onFontSelect, onSearch }: Props) {
   const root = document.documentElement;
   if (theme === 'dark') {
     root.style.setProperty('--clr-gray-100-sec', '#1f1f1f');
@@ -30,27 +32,26 @@ function Header({ onThemeChange, theme, onFontSelect }: Props) {
 
   return (
     <header>
-      <div>
-        <div className={styles.headerWrapper}>
-          <img src={logo} className={styles.logo} alt='logo' />
-          <div className={navStyles.nav}>
-            <FontsMenu onFontSelect={onFontSelect} />
-            <div className='verticalDevider'></div>
-            <div className={switchStyles.toggleBox}>
-              <input
-                type='checkbox'
-                id='themeTogller'
-                className={switchStyles.themToggler}
-                onChange={() => {
-                  document.body.classList.toggle('dark');
-                  onThemeChange();
-                }}
-              />
-              <img src={moon} alt='moon icon' />
-            </div>
+      <div className={styles.headerWrapper}>
+        <img src={logo} className={styles.logo} alt='logo' />
+        <div className={navStyles.nav}>
+          <FontsMenu onFontSelect={onFontSelect} />
+          <div className='verticalDevider'></div>
+          <div className={switchStyles.toggleBox}>
+            <input
+              type='checkbox'
+              id='themeTogller'
+              className={switchStyles.themToggler}
+              onChange={() => {
+                document.body.classList.toggle('dark');
+                onThemeChange();
+              }}
+            />
+            <img src={moon} alt='moon icon' />
           </div>
         </div>
       </div>
+      <InputText onSearch={onSearch} />
     </header>
   );
 }
