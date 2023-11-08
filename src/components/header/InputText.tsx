@@ -17,7 +17,6 @@ function InputText({ onSearch }: Props) {
       setInputError(false);
       let word = ref.current.value.trim().replace(/\s/g, '').toLowerCase();
       onSearch(word);
-      ref.current.value = '';
     }
   };
   return (
