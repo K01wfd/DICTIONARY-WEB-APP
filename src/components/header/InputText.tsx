@@ -12,7 +12,6 @@ function InputText({ onSearch }: Props) {
     event.preventDefault();
     if (!ref.current?.value) {
       setInputError(true);
-      console.log(inputError);
     } else if (ref.current?.value) {
       setInputError(false);
       let word = ref.current.value.trim().replace(/\s/g, '').toLowerCase();
