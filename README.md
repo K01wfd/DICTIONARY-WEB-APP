@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshots/desktop-serif.png)
+![#Desktop-main](./screenshots/desktop-main.png)
 ![](./screenshots/secondary/desktop-sans.png)
 ![](./screenshots/secondary/desktop-mono.png)
 ![](./screenshots/secondary/desktop-light-active.png)
