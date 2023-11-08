@@ -17,7 +17,7 @@
   color: var(--clr-gray-400);
   font-size: var(--fs-main-20);
 }
-.nounDefList {
+.meaningsList {
   margin-top: 2.4rem;
   margin-left: 4.7rem;
   font-size: var(--fs-main-18);
@@ -26,8 +26,12 @@
   row-gap: 1.3rem;
   margin-bottom: 6.3rem;
 }
-.nounDefList li::marker {
+.meaningsList li::marker {
   color: var(--clr-accent);
+}
+.meaningsList p[role='listitem'] {
+  color: var(--clr-gray-400);
+  margin-top: 1.3rem;
 }
 .synon {
   display: flex;
@@ -41,6 +45,7 @@
 .synon span {
   color: var(--clr-accent);
   margin-left: 1rem;
+  font-weight: var(--fw-700);
 }
 span.notFoundSyno {
   color: var(--clr-gray-400);

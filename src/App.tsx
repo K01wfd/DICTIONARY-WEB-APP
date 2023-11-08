@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Header from './components/header/Header';
-import Translation from './components/main/Translation';
-import Main from './components/main/Main';
+import RestOfContent from './components/RestOfContent';
 import { useDictionary } from './hooks/useDictionary';
 import { getDictionaryData } from './services/proccessDictionary';
 
@@ -12,7 +11,6 @@ function App() {
   const { dictionary, isLoading, error } = useDictionary(word);
   const translation = getDictionaryData(dictionary);
   console.log(dictionary);
-  console.log(translation);
   return (
     <div className={font}>
       <Header
@@ -21,7 +19,7 @@ function App() {
         theme={theme}
       />
       {
-        <Main
+        <RestOfContent
           word={word}
           onSearch={(searchord) => setWord(searchord)}
           translation={translation}

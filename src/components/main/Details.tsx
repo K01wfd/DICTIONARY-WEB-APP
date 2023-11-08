@@ -1,4 +1,4 @@
-import styles from '../../styles/main/nounPart.module.css';
+import styles from '../../styles/main/details.module.css';
 import { Meaning } from '../../interfaces/dictionary';
 
 interface Props {
@@ -14,13 +14,28 @@ function Details({ details, title }: Props) {
       </div>
 
       <p className={styles.meaning}>Meaning</p>
-      <ul className={styles.nounDefList}>
+      <ul className={styles.meaningsList}>
         {details.map(
           (data, i) =>
             i < 1 &&
             data.definitions.map(
               (def, i) =>
-                i < 4 && <li key={def.definition}>{def.definition}</li>
+                i < 4 && (
+                  <li key={def.definition}>
+                    {def.definition}
+                    {def.example && (
+                      <p
+                        role='listitem'
+                        className={styles.example}
+                        key={def.example}
+                      >
+                        &quot;
+                        {def.example}
+                        &quot;
+                      </p>
+                    )}
+                  </li>
+                )
             )
         )}
       </ul>

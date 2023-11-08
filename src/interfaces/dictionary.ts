@@ -1,6 +1,6 @@
 export interface Meaning {
   partOfSpeech: string;
-  definitions: { definition: string }[];
+  definitions: { definition: string; example: string }[];
   synonyms: string[];
 }
 export interface Phonetics {

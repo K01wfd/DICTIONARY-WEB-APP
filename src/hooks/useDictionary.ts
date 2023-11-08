@@ -34,7 +34,9 @@ export const useDictionary = (word: string) => {
       }, 500);
     };
 
-    fetchData();
+    if (word) {
+      fetchData();
+    }
 
     return () => {
       controller.abort();

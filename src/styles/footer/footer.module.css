@@ -1,0 +1,32 @@
+.footerWrapper {
+  padding-block: 4rem;
+}
+.sourceUrl {
+  margin-top: 1.9rem;
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+  font-size: var(--fs-footer);
+  color: var(--clr-gray-400);
+  font-weight: var(--fw-400);
+}
+.urlBox a:link,
+.urlBox a:visited {
+  color: var(--clr-gray-600);
+}
+.urlBox a:hover {
+  color: var(--clr-accent);
+}
+.urlBox a img {
+  margin-left: 1.5rem;
+}
+
+@media only screen and (max-width: 30em) {
+  .sourceUrl {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .urlBox a img {
+    margin-left: 0.9rem;
+  }
+}
