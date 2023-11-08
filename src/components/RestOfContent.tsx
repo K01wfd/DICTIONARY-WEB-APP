@@ -18,17 +18,22 @@ function RestOfContent({
   isLoading,
   error,
 }: Props) {
-  if (error) return <NoDefinition />;
   return (
     <>
-      <main>
-        <InputText onSearch={onSearch} />
-        {word && !isLoading ? <Translation translation={translation} /> : null}
-      </main>
-
-      {!isLoading && (
-        <footer>{word && <Footer url={translation.sourceUrl} />}</footer>
+      {!error ? (
+        <main>
+          <InputText onSearch={onSearch} />
+          {word && !isLoading ? (
+            <Translation translation={translation} />
+          ) : null}
+        </main>
+      ) : (
+        <NoDefinition />
       )}
+
+      {!isLoading && !error ? (
+        <footer>{word && <Footer url={translation.sourceUrl} />}</footer>
+      ) : null}
     </>
   );
 }
