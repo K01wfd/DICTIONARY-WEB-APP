@@ -30,16 +30,16 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshots/desktop-sans.png)
 ![](./screenshots/desktop-serif.png)
-![](./screenshots/desktop-mono.png)
-![](./screenshots/desktop-light-active.png)
-![](./screenshots/desktop-dark-active.png)
-![](./screenshots/desktop-dark.png)
-![](./screenshots/desktop-no-definition.png)
-![](./screenshots/desktop-empty.png)
-![](./screenshots/tablet.png)
-![](./screenshots/mobile.png)
+![](./screenshots/secondary/desktop-sans.png)
+![](./screenshots/secondary/desktop-mono.png)
+![](./screenshots/secondary/desktop-light-active.png)
+![](./screenshots/secondary/desktop-dark-active.png)
+![](./screenshots/secondary/desktop-dark.png)
+![](./screenshotssecondary//desktop-no-definition.png)
+![](./screenshots/secondary/desktop-empty.png)
+![](./screenshots/secondary/tablet.png)
+![](./screenshots/secondary/mobile.png)
 
 ## My process
 
