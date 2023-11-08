@@ -18,6 +18,7 @@ function App() {
         onFontSelect={(font) => setFont(font)}
         theme={theme}
         onSearch={(searchord) => setWord(searchord)}
+        selectedFont={font}
       />
 
       <RestOfContent

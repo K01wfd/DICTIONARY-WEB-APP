@@ -11,8 +11,15 @@ interface Props {
   onFontSelect: (font: string) => void;
   theme: string;
   onSearch: (searchWord: string) => void;
+  selectedFont: string;
 }
-function Header({ onThemeChange, theme, onFontSelect, onSearch }: Props) {
+function Header({
+  onThemeChange,
+  theme,
+  onFontSelect,
+  onSearch,
+  selectedFont,
+}: Props) {
   const root = document.documentElement;
   if (theme === 'dark') {
     root.style.setProperty('--clr-gray-100-sec', '#1f1f1f');
@@ -35,7 +42,7 @@ function Header({ onThemeChange, theme, onFontSelect, onSearch }: Props) {
       <div className={styles.headerWrapper}>
         <img src={logo} className={styles.logo} alt='logo' />
         <div className={navStyles.nav}>
-          <FontsMenu onFontSelect={onFontSelect} />
+          <FontsMenu onFontSelect={onFontSelect} selectedFont={selectedFont} />
           <div className='verticalDevider'></div>
           <div className={switchStyles.toggleBox}>
             <input

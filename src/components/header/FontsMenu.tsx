@@ -4,8 +4,9 @@ import { useState } from 'react';
 
 interface Props {
   onFontSelect: (font: string) => void;
+  selectedFont: string;
 }
-function FontsMenu({ onFontSelect }: Props) {
+function FontsMenu({ onFontSelect, selectedFont }: Props) {
   const [menuActive, setMenuActive] = useState(false);
 
   const fontsMap = [
@@ -25,7 +26,7 @@ function FontsMenu({ onFontSelect }: Props) {
         aria-controls='select-dropdown'
         onClick={() => setMenuActive(!menuActive)}
       >
-        <span className={styles.menuSelectedValue}>sans</span>
+        <span className={styles.menuSelectedValue}>{selectedFont}</span>
         <img
           src={arrowDown}
           className={styles.menuArrow}
