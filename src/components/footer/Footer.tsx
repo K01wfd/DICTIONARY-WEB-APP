@@ -5,7 +5,7 @@ interface Props {
 }
 function Footer({ url }: Props) {
   return (
-    <div className='container'>
+    <div>
       <div className={styles.footerWrapper}>
         <div className='horizontalDevider'></div>
         <div className={styles.sourceUrl}>

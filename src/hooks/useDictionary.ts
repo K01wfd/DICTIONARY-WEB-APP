@@ -31,7 +31,7 @@ export const useDictionary = (word: string) => {
             setIsLoading(false);
             setError(err.message);
           });
-      }, 500);
+      }, 5000);
     };
 
     if (word) {

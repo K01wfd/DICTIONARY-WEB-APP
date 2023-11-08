@@ -30,7 +30,7 @@ function Header({ onThemeChange, theme, onFontSelect }: Props) {
 
   return (
     <header>
-      <div className={`container`}>
+      <div>
         <div className={styles.headerWrapper}>
           <img src={logo} className={styles.logo} alt='logo' />
           <div className={navStyles.nav}>

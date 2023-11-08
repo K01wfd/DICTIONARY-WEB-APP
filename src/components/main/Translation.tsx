@@ -8,7 +8,7 @@ interface Props {
 }
 function Word({ translation }: Props) {
   return (
-    <section className='container'>
+    <section>
       <div className={styles.translation}>
         {/* WORD PART */}
         <div className={styles.phonetics}>

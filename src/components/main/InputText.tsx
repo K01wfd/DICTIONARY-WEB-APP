@@ -16,7 +16,7 @@ function InputText({ onSearch }: Props) {
     }
   };
   return (
-    <div className='container'>
+    <div>
       <form action='' onSubmit={handleSubmit}>
         <div className={styles.inputGroup}>
           <input

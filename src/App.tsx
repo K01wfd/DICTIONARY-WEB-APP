@@ -12,7 +12,7 @@ function App() {
   const translation = getDictionaryData(dictionary);
   console.log(dictionary);
   return (
-    <div className={font}>
+    <div className={`${font} container`}>
       <Header
         onThemeChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
         onFontSelect={(font) => setFont(font)}

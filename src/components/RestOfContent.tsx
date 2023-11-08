@@ -1,4 +1,5 @@
 import { TranslationShape } from '../interfaces/dictionary';
+import Loader from './Loader';
 import NoDefinition from './NoDefinition';
 import Footer from './footer/Footer';
 import InputText from './main/InputText';
@@ -25,7 +26,9 @@ function RestOfContent({
           <InputText onSearch={onSearch} />
           {word && !isLoading ? (
             <Translation translation={translation} />
-          ) : null}
+          ) : (
+            <Loader />
+          )}
         </main>
       ) : (
         <NoDefinition />
