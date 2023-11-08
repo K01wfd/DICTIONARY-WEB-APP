@@ -11,5 +11,14 @@ export interface Dictionary {
   word: string;
   phonetics: Phonetics[];
   meanings: Meaning[];
-  sourceUrls: string;
+  sourceUrls: string[];
+}
+
+export interface TranslationShape {
+  word: string;
+  phonetics: Phonetics;
+  nounMeanings: Meaning[];
+  verbMeanings: Meaning[];
+  adjectiveMeaning: Meaning[];
+  sourceUrl: string;
 }

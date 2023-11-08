@@ -1,4 +1,3 @@
-import sorry from '../assets/images/icon-new-window.svg';
 import styles from '../styles/noDefinition.module.css';
 
 function NoDefinition() {

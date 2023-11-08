@@ -1,4 +1,9 @@
-import { Dictionary, Meaning, Phonetics } from '../interfaces/dictionary';
+import {
+  Dictionary,
+  Meaning,
+  Phonetics,
+  TranslationShape,
+} from '../interfaces/dictionary';
 
 export const getWord = (dictionary: Dictionary[]) => {
   let word = '';
@@ -40,4 +45,25 @@ export const processMeanings = (dictionary: Dictionary[], filter: string) => {
   });
 
   return meanings;
+};
+export const getSourceUrl = (dictionary: Dictionary[]) => {
+  let sourceUrl: string = '';
+  dictionary.forEach((data) => {
+    data.sourceUrls.forEach((url) => {
+      sourceUrl = sourceUrl !== url ? url : '';
+    });
+  });
+  return sourceUrl;
+};
+
+export const getDictionaryData = (dictionary: Dictionary[]) => {
+  let translation = {} as TranslationShape;
+
+  translation.word = getWord(dictionary);
+  translation.phonetics = processPhonetics(dictionary);
+  translation.nounMeanings = processMeanings(dictionary, 'noun');
+  translation.verbMeanings = processMeanings(dictionary, 'verb');
+  translation.sourceUrl = getSourceUrl(dictionary);
+
+  return translation;
 };

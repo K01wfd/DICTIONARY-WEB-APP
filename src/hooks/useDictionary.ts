@@ -10,26 +10,28 @@ export const useDictionary = (word: string) => {
   useEffect(() => {
     const controller = new AbortController();
     const fetchData = async () => {
+      setError('');
       setIsLoading(true);
-      await axios
-        .get<Dictionary[]>(
-          `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`,
-          {
-            signal: controller.signal,
-          }
-        )
-        .then((res) => {
-          setDictionary(res.data);
-          setIsLoading(false);
-          setError('');
-        })
-        .catch((err) => {
-          if (err instanceof CanceledError) {
-            return;
-          }
-          setIsLoading(false);
-          setError(err.message);
-        });
+      setTimeout(async () => {
+        await axios
+          .get<Dictionary[]>(
+            `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`,
+            {
+              signal: controller.signal,
+            }
+          )
+          .then((res) => {
+            setDictionary(res.data);
+            setIsLoading(false);
+          })
+          .catch((err) => {
+            if (err instanceof CanceledError) {
+              return;
+            }
+            setIsLoading(false);
+            setError(err.message);
+          });
+      }, 500);
     };
 
     fetchData();

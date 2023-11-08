@@ -1,6 +1,6 @@
 import { FormEvent, useRef } from 'react';
-import search from '../assets/images/icon-search.svg';
-import styles from '../styles/input.module.css';
+import search from '../../assets/images/icon-search.svg';
+import styles from '../../styles/input.module.css';
 
 interface Props {
   onSearch: (searchWord: string) => void;
