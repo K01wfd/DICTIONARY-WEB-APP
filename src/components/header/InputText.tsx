@@ -32,12 +32,7 @@ function InputText({ onSearch }: Props) {
             ref={ref}
           />
           <button aria-label='Search word button'>
-            <img
-              src={search}
-              aria-hidden='true'
-              aria-label='Search icon'
-              alt=''
-            />
+            <img src={search} alt='' />
           </button>
           {inputError && (
             <p className={styles.errorMessage}>Whoops, can&apos;t be empty…</p>

@@ -48,6 +48,10 @@
   margin-left: 1rem;
   font-weight: var(--fw-700);
 }
+.synon span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 span.notFoundSyno {
   color: var(--clr-gray-400);
   opacity: 0.5;

@@ -27,11 +27,7 @@ function FontsMenu({ onFontSelect, selectedFont }: Props) {
         onClick={() => setMenuActive(!menuActive)}
       >
         <span className={styles.menuSelectedValue}>{selectedFont}</span>
-        <img
-          src={arrowDown}
-          className={styles.menuArrow}
-          alt='arrow down icon'
-        />
+        <img src={arrowDown} className={styles.menuArrow} alt='' />
       </button>
       <ul
         className={menuActive ? styles.menuList : 'visuallyHidden'}

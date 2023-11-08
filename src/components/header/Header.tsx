@@ -4,7 +4,7 @@ import switchStyles from '../../styles/header/switch.module.css';
 import navStyles from '../../styles/header/header.module.css';
 import moon from '../../assets/images/icon-moon.svg';
 import FontsMenu from './FontsMenu';
-import InputText from '../main/InputText';
+import InputText from './InputText';
 
 interface Props {
   onThemeChange: () => void;
@@ -54,7 +54,7 @@ function Header({
                 onThemeChange();
               }}
             />
-            <img src={moon} alt='moon icon' />
+            <img src={moon} alt='' />
           </div>
         </div>
       </div>

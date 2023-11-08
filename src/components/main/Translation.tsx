@@ -1,12 +1,34 @@
 import styles from '../../styles/main/translation.module.css';
 import { TranslationShape } from '../../interfaces/dictionary';
 import play from '../../assets/images/icon-play.svg';
+import playActive from '../../assets/images/icone-play-active.svg';
 import Details from './Details';
 
 interface Props {
   translation: TranslationShape;
 }
 function Word({ translation }: Props) {
+  const playAudio = () => {
+    const audioTranslation = document.getElementById(
+      'audio'
+    ) as HTMLAudioElement;
+    try {
+      audioTranslation?.play();
+    } catch (err) {
+      if (err) return;
+    }
+  };
+
+  const changePlayButtonIcon = () => {
+    let icon = document.getElementById('playIcon') as HTMLImageElement;
+    icon?.addEventListener('mouseover', () => {
+      icon.src = playActive;
+    });
+    icon?.addEventListener('mouseout', () => {
+      icon.src = play;
+    });
+  };
+  changePlayButtonIcon();
   return (
     <section>
       <div className={styles.translation}>
@@ -17,8 +39,15 @@ function Word({ translation }: Props) {
               <h1>{translation.word}</h1>
               <p>{translation.phonetics.text}</p>
             </div>
-            <button>
-              <img src={play} alt='play button' />
+            <button
+              onClick={
+                translation.phonetics.audio
+                  ? playAudio
+                  : () => console.log('no audio src')
+              }
+            >
+              <audio id='audio' src={translation.phonetics.audio}></audio>
+              <img id='playIcon' src={play} alt='' />
             </button>
           </div>
         )}
@@ -28,6 +57,9 @@ function Word({ translation }: Props) {
         )}
         {translation.verbMeanings.length > 0 && (
           <Details details={translation.verbMeanings} title='verb' />
+        )}
+        {translation.adjectiveMeaning.length > 0 && (
+          <Details details={translation.adjectiveMeaning} title='adjective' />
         )}
       </div>
     </section>

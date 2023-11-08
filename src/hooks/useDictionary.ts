@@ -31,7 +31,7 @@ export const useDictionary = (word: string) => {
             setIsLoading(false);
             setError(err.message);
           });
-      }, 5000);
+      }, 300);
     };
 
     if (word) {
@@ -42,5 +42,6 @@ export const useDictionary = (word: string) => {
       controller.abort();
     };
   }, [word]);
+
   return { dictionary, isLoading, error };
 };

@@ -19,3 +19,6 @@
   border: 0;
   cursor: pointer;
 }
+audio:not([controls]) {
+  display: inline-block !important;
+}

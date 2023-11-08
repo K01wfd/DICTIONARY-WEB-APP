@@ -10,7 +10,7 @@ function App() {
   const [word, setWord] = useState<string>('');
   const { dictionary, isLoading, error } = useDictionary(word);
   const translation = getDictionaryData(dictionary);
-  console.log(dictionary);
+
   return (
     <div className={`${font} container`}>
       <Header

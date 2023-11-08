@@ -63,6 +63,7 @@ export const getDictionaryData = (dictionary: Dictionary[]) => {
   translation.phonetics = processPhonetics(dictionary);
   translation.nounMeanings = processMeanings(dictionary, 'noun');
   translation.verbMeanings = processMeanings(dictionary, 'verb');
+  translation.adjectiveMeaning = processMeanings(dictionary, 'adjective');
   translation.sourceUrl = getSourceUrl(dictionary);
 
   return translation;
